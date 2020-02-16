@@ -1,0 +1,18 @@
+﻿@if (!string.IsNullOrEmpty(Convert.ToString(Session["Username"])))
+{
+    <p>Welkom, @Session["Username"]</p>
+    <a href="~/MoviesRental/Genres" class="btn btn-primary navBar">Genres</a>
+    <a href="~/Account/Logout" class="btn btn-primary navBar">Uitloggen</a>
+    foreach (string key in Session)
+    {
+        if (int.TryParse(key, out int bandNr))
+        {
+            <a href="~/MoviesRental/Mandje" class="btn btn-primary">Winkelmandje</a>
+            break;
+        }
+    }
+}
+else
+{
+    <h4 class="alert alert-warning">Eerst aanmelden om te kunnen huren!</h4>
+}
