@@ -139,6 +139,8 @@
     <Compile Include="Models\Film.cs">
       <DependentUpon>MoviesRental.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilmPartial.cs" />
+    <Compile Include="Models\FilmProperties.cs" />
     <Compile Include="Models\Genre.cs">
       <DependentUpon>MoviesRental.tt</DependentUpon>
     </Compile>
