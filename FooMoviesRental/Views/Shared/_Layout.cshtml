@@ -9,12 +9,12 @@
 </head>
 <body class="container">
     <header>
-        @*//TODO: Add link to Logo*@
         <a href="@Url.Action("Login", "Account")">
             <img class="Logo" src="~/Images/fooLogo.png" alt="Foo Movies Rental" />
         </a>
     </header>
     <div class="body-content">
+        @Html.Partial("_NavBarPartial")
         @RenderBody()
     </div>
     @Scripts.Render("~/bundles/jquery")
