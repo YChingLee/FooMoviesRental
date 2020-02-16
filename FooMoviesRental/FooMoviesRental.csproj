@@ -183,6 +183,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MoviesRental.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\fooLogo.png" />
     <Content Include="Models\MoviesRental.edmx.diagram">
       <DependentUpon>MoviesRental.edmx</DependentUpon>
     </Content>
