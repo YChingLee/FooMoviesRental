@@ -19,12 +19,11 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@Html.DisplayFor(m => item.Titel)</td>
-                            <td>@Html.DisplayFor(m => item.Prijs)</td>
-                            @*//TODO: Post request ~/MoviesRental/Verwijderen *@ 
-                            <td>Verwijderen</td>
-                        </tr>
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.Titel)</td>
+                        <td>@Html.DisplayFor(m => item.Prijs)</td>
+                        <td>@Html.ActionLink("Verwijderen", "VerwijderingBevestigen", new { bandNr = item.BandNr })</td>
+                    </tr>
                     }
                 </tbody>
             </table>

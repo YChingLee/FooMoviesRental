@@ -237,6 +237,7 @@
     <Content Include="Views\Shared\_NavBarPartial.cshtml" />
     <Content Include="Views\MoviesRental\Films.cshtml" />
     <Content Include="Views\MoviesRental\Mandje.cshtml" />
+    <Content Include="Views\MoviesRental\VerwijderingBevestigen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

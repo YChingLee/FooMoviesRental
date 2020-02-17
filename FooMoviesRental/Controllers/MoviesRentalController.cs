@@ -59,5 +59,16 @@ namespace FooMoviesRental.Controllers
             }
             return View(mandjeItems);
         }
+
+        public ActionResult VerwijderingBevestigen(int bandNr)
+        {
+            return View(db.GetFilm(bandNr));
+        }
+
+        public ActionResult Verwijderen(int bandNr)
+        {
+            Session.Remove(bandNr.ToString());
+            return RedirectToAction("Mandje");
+        }
     }
 }
