@@ -1,0 +1,9 @@
+﻿@model FooMoviesRental.Models.Film
+@{
+    ViewBag.Title = "VerwijderingBevestigen";
+}
+
+<h3 class="page-header">Verwijder gehuurde film</h3>
+<p>Ben je zeker dat je "@Model.Titel" niet wil huren?</p>
+<a class="btn btn-default" href="@Url.Action("Verwijderen", new { bandNr = Model.BandNr })">JA</a>
+<a class="btn btn-default" href="~/MoviesRental/Mandje">NEE</a>

@@ -30,6 +30,17 @@ namespace FooMoviesRental.Services
             }
         }
 
+        public Genre GetGenre(int genreNr)
+        {
+            using (var db = new FooMoviesRentalEntities())
+            {
+                var query = from g in db.Genres
+                            where g.GenreNr == genreNr
+                            select g;
+                return query.FirstOrDefault();
+            }
+        }
+
         public List<Film> GetFilms(int genreNr)
         {
             using (var db = new FooMoviesRentalEntities())
@@ -38,6 +49,17 @@ namespace FooMoviesRental.Services
                             where f.GenreNr == genreNr
                             select f;
                 return query.ToList();
+            }
+        }
+
+        public Film GetFilm(int bandNr)
+        {
+            using (var db = new FooMoviesRentalEntities())
+            {
+                var query = from film in db.Films
+                            where film.BandNr == bandNr
+                            select film;
+                return query.FirstOrDefault();
             }
         }
 

@@ -4,7 +4,15 @@
     ViewBag.Title = "Films";
 }
 
-<h3 class="page-header">Films</h3>
+@if (ViewBag.genre != null)
+{
+    <h3 class="page-header">@ViewBag.genre > Films</h3>
+}
+@if (TempData["FilmTitel"] != null)
+{
+    <h4 class="text-danger">🛑 Sorry, film @TempData["FilmTitel"] is ondertussen buiten voorraad.</h4>
+}
+
 <div class="row">
     <div class="col-md-8">
         <table class="table table-striped">
@@ -14,7 +22,6 @@
                     <th>Prijs</th>
                     <th class="text-center">In Vorraad</th>
                     <th>Huren</th>
-
                 </tr>
             </thead>
             <tbody>
