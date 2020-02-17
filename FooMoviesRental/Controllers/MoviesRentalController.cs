@@ -88,7 +88,7 @@ namespace FooMoviesRental.Controllers
                     MandjeItem mandjeItem = new MandjeItem(bandNr, film.Titel, film.Prijs);
                     if (film.InVoorraad > 0)
                     {
-                        db.UpdateTbVerhuur(klant.KlantNr, film.BandNr);
+                        db.UpdateDatabase(klant.KlantNr, film.BandNr);
                         afrekenenVM.GelukteVerhuringen.Add(mandjeItem);
                     }
                     else

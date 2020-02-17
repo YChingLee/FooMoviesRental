@@ -72,7 +72,7 @@ namespace FooMoviesRental.Services
             }
         }
 
-        public void UpdateTbVerhuur(int klantNr, int bandNr)
+        public void UpdateDatabase(int klantNr, int bandNr)
         {
             Verhuur verhuur = new Verhuur();
             verhuur.KlantNr = klantNr;
