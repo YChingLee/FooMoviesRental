@@ -6,8 +6,6 @@ using System.Web.Mvc;
 using FooMoviesRental.Models;
 using FooMoviesRental.Services;
 
-
-
 namespace FooMoviesRental.Controllers
 {
     public class AccountController : Controller

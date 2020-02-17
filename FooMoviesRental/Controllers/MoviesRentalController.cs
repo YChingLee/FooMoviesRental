@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using FooMoviesRental.Services;
 using FooMoviesRental.Models;
+using FooMoviesRental.Filters;
 
 namespace FooMoviesRental.Controllers
 {
+    [UserAuthFilter]
     public class MoviesRentalController : Controller
     {
         MoviesRentalDbService db = new MoviesRentalDbService();
