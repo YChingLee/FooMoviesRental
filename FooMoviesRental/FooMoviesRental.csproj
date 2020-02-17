@@ -147,6 +147,7 @@
     <Compile Include="Models\Klant.cs">
       <DependentUpon>MoviesRental.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MandjeItem.cs" />
     <Compile Include="Models\MoviesRental.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -235,6 +236,7 @@
     <Content Include="Views\MoviesRental\Genres.cshtml" />
     <Content Include="Views\Shared\_NavBarPartial.cshtml" />
     <Content Include="Views\MoviesRental\Films.cshtml" />
+    <Content Include="Views\MoviesRental\Mandje.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
