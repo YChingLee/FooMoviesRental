@@ -19,6 +19,15 @@ namespace FooMoviesRental.Services
             }
         }
 
+        public Klant GetKlant(int id)
+        {
+            using (var db = new FooMoviesRentalEntities())
+            {
+                return db.Klanten.Find(id);
+            }
+        }
+
+
         public List<Genre> GetGenres()
         {
             using (var db = new FooMoviesRentalEntities())
@@ -63,5 +72,24 @@ namespace FooMoviesRental.Services
             }
         }
 
+        public void UpdateDatabase(int klantNr, int bandNr)
+        {
+            Verhuur verhuur = new Verhuur();
+            verhuur.KlantNr = klantNr;
+            verhuur.BandNr = bandNr;
+            verhuur.VerhuurDatum = DateTime.Now.Date;
+
+            using (var db = new FooMoviesRentalEntities())
+            {
+                //Record verhuur
+                db.Verhuren.Add(verhuur);
+                //Updtae invoorraad & outvoorraad
+                Film film = db.Films.Find(bandNr);
+                film.InVoorraad -= 1;
+                film.UitVoorraad += 1;
+                film.TotaalVerhuurd += 1;
+                db.SaveChanges();
+            }
+        }
     }
 }

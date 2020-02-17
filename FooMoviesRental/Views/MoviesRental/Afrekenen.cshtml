@@ -1,0 +1,60 @@
+﻿@model FooMoviesRental.Models.AfrekenenViewModel
+@{
+    ViewBag.Title = "Afrekenen";
+    decimal totaal = 0m;
+}
+
+@if (Model.MislukteVerhuringen.Count > 0)
+{
+    <div class="billingMsg text-danger">
+        <text>
+            🛑 Sorry, deze films zijn momenteel buitenvoorraad:
+        </text>
+        @foreach (var m in Model.MislukteVerhuringen)
+        {
+            <text>&nbsp;@m.Titel</text>
+        }
+    </div>
+}
+<h3 class="page-header">Afrekenen</h3>
+@if (Model.GelukteVerhuringen.Count > 0)
+{
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Titel</th>
+                        <th>Prijs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.GelukteVerhuringen)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.Titel)</td>
+                            <td>@Html.DisplayFor(m => item.Prijs)</td>
+                        </tr>
+                        totaal += item.Prijs;
+                    }
+                </tbody>
+                <tfoot>
+                    <tr class="bg-primary">
+                        <td>Totaal:</td>
+                        <td>@string.Format("€ {0:#,##0.00}", totaal)</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <p><b>wordt gefactureerd aan:</b></p>
+    <p>@Model.Klant.Voornaam @Model.Klant.Naam</p>
+    <p>
+        @Model.Klant.Straat_Nr <br />
+        @Model.Klant.PostCode @Model.Klant.Gemeente
+    </p>
+}
+else
+{
+    <h4 class="alert alert-warning">Uw wikelmandje is leeg</h4>
+}

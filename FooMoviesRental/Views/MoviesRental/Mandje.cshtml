@@ -19,18 +19,17 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                    <tr>
-                        <td>@Html.DisplayFor(m => item.Titel)</td>
-                        <td>@Html.DisplayFor(m => item.Prijs)</td>
-                        <td>@Html.ActionLink("Verwijderen", "VerwijderingBevestigen", new { bandNr = item.BandNr })</td>
-                    </tr>
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.Titel)</td>
+                            <td>@Html.DisplayFor(m => item.Prijs)</td>
+                            <td>@Html.ActionLink("Verwijderen", "VerwijderingBevestigen", new { bandNr = item.BandNr })</td>
+                        </tr>
                     }
                 </tbody>
             </table>
         </div>
     </div>
-    //TODO: Link Afrekenen 
-    <a class="btn btn-default">Afrekenen &raquo;</a>
+    <a href="~/MoviesRental/Afrekenen" class="btn btn-default">Afrekenen &raquo;</a>
     <a href="~/MoviesRental/Genres" class="btn btn-default">Verder winkelen &raquo;</a>
 }
 else
