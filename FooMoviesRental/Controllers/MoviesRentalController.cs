@@ -70,5 +70,41 @@ namespace FooMoviesRental.Controllers
             Session.Remove(bandNr.ToString());
             return RedirectToAction("Mandje");
         }
+
+        public ActionResult Afrekenen()
+        {
+            var klant = db.GetKlant((int)Session["UserId"]);
+            AfrekenenViewModel afrekenenVM = new AfrekenenViewModel(klant);
+            /// <summary>
+            /// Check again if the video is still in stock:
+            /// if yes, update the database and log the video in GelukteVerhuringen
+            /// otherwise log it in MislukteVerhuringen
+            /// </summary>
+            foreach (string key in Session)
+            {
+                if (int.TryParse(key, out int bandNr))
+                {
+                    Film film = db.GetFilm(bandNr);
+                    MandjeItem mandjeItem = new MandjeItem(bandNr, film.Titel, film.Prijs);
+                    if (film.InVoorraad > 0)
+                    {
+                        db.UpdateTbVerhuur(klant.KlantNr, film.BandNr);
+                        afrekenenVM.GelukteVerhuringen.Add(mandjeItem);
+                    }
+                    else
+                        afrekenenVM.MislukteVerhuringen.Add(mandjeItem);
+                }
+            }
+
+            ///<summary>
+            /// Clear sessions except Username and UserId
+            /// </summary> 
+            Session.RemoveAll();
+            Session["Username"] = $"{klant.Voornaam} {klant.Naam}";
+            Session["UserId"] = klant.KlantNr;
+
+            return View(afrekenenVM);
+        }
+
     }
 }
