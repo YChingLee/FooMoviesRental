@@ -19,5 +19,27 @@ namespace FooMoviesRental.Services
             }
         }
 
+        public List<Genre> GetGenres()
+        {
+            using (var db = new FooMoviesRentalEntities())
+            {
+                var query = from g in db.Genres
+                            orderby g.GenreNaam
+                            select g;
+                return query.ToList();
+            }
+        }
+
+        public List<Film> GetFilms(int genreNr)
+        {
+            using (var db = new FooMoviesRentalEntities())
+            {
+                var query = from f in db.Films
+                            where f.GenreNr == genreNr
+                            select f;
+                return query.ToList();
+            }
+        }
+
     }
 }

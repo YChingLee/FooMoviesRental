@@ -1,9 +1,14 @@
-﻿
+﻿@model List<FooMoviesRental.Models.Genre>
 @{
     ViewBag.Title = "Genres";
 }
 
-@*//TODO: Display list of genres*@
-<h2>Genres</h2>
-
-
+<h3 class="page-header">Klik op het gewenste GENRE</h3>
+<ul>
+    @foreach (var m in Model)
+    {
+        <li>
+            <a href="@Url.Action("Films", new { genreNr = m.GenreNr })">@m.GenreNaam</a>
+        </li>
+    }
+</ul>

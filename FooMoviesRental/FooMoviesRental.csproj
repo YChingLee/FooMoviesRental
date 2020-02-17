@@ -139,6 +139,8 @@
     <Compile Include="Models\Film.cs">
       <DependentUpon>MoviesRental.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilmPartial.cs" />
+    <Compile Include="Models\FilmProperties.cs" />
     <Compile Include="Models\Genre.cs">
       <DependentUpon>MoviesRental.tt</DependentUpon>
     </Compile>
@@ -232,6 +234,7 @@
     <Content Include="Views\Account\LoginError.cshtml" />
     <Content Include="Views\MoviesRental\Genres.cshtml" />
     <Content Include="Views\Shared\_NavBarPartial.cshtml" />
+    <Content Include="Views\MoviesRental\Films.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
