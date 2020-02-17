@@ -136,6 +136,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AfrekenenViewModel.cs" />
     <Compile Include="Models\Film.cs">
       <DependentUpon>MoviesRental.tt</DependentUpon>
     </Compile>
@@ -238,6 +239,7 @@
     <Content Include="Views\MoviesRental\Films.cshtml" />
     <Content Include="Views\MoviesRental\Mandje.cshtml" />
     <Content Include="Views\MoviesRental\VerwijderingBevestigen.cshtml" />
+    <Content Include="Views\MoviesRental\Afrekenen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

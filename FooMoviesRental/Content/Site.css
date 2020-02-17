@@ -32,3 +32,8 @@ textarea {
 .navBar {
     width: 8em;
 }
+
+.billingMsg {
+    padding-top: 1em;
+    font-size: 1.3em;
+}
