@@ -1,6 +1,6 @@
-create database VideoVerhuur
+create database FooMoviesRental
 go
-use VideoVerhuur
+use FooMoviesRental
 go
 
 
